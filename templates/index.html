@@ -48,6 +48,7 @@
               <thead>
                   <tr>
                       <th>Name</th>
+                      <th>Address</th>
                       <th>Rating</th>
                       <th class="text-end">Details</th>
                   </tr>
@@ -56,6 +57,7 @@
                   {% for restaurant in restaurants %}
                       <tr>
                           <td>{{ restaurant.name }}</td>
+                          <td>{{ restaurant.street_address }}</td>
                           <td>{% include "star_rating.html" %}</td>
                           <td class="text-end"><a href="{{ url_for('details', id=restaurant.id) }}" class="btn btn-sm btn-primary">Details</a></td>
                       </tr>
