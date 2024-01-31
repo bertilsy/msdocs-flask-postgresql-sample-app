@@ -8,7 +8,7 @@ class Restaurant(db.Model):
     __tablename__ = 'restaurant'
     id = Column(Integer, primary_key=True)
     name = Column(String(50))
-    street_address = Column(String(50))
+    street_address = Column(String(250))
     description = Column(String(250))
 
     def __str__(self):
@@ -18,7 +18,7 @@ class Review(db.Model):
     __tablename__ = 'review'
     id = Column(Integer, primary_key=True)
     restaurant = Column(Integer, ForeignKey('restaurant.id', ondelete="CASCADE"))
-    user_name = Column(String(30))
+    user_name = Column(String(250))
     rating = Column(Integer)
     review_text = Column(String(500))
     review_date = Column(DateTime)
